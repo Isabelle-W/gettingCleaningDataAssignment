@@ -1,5 +1,6 @@
 ## gettingCleaningDataAssignment
-Project work for Coursera course getting and cleaning data
+#Project work for Coursera course getting and cleaning data
+
 The purpose of the project is to collect, work with and clean a dataset.
 
 1. Script download_data.R downloads the required dataset to the working directory and unzips the file.
