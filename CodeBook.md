@@ -17,7 +17,7 @@ The raw data consists of
 - An identifier of the subject who carried out the experiment.
 
 
-The downloadable dataset includes the following files:
+The dataset can be downloaded using script download_data.R and includes the following files:
 =========================================
 
 - 'README.txt'
