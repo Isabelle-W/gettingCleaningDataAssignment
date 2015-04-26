@@ -36,7 +36,7 @@ The following files are available for the train and test data. Their description
 
 Processing the data using script run_analysis.R
 ======================================
-This script merges the training and test datasets, extracts only the variables representing mean and standard deviation (std), labels the columns with descriptive variable names and creates a tidy dataset with variable averages for each subject and activity. The processed data will finally be written into file tidy_dataset.txt. 
+This script merges the training and test datasets, extracts only the variables representing mean and standard deviation (std), labels the columns with descriptive variable names and creates a tidy dataset with variable averages for each subject and activity. The processed data will finally be written as a narrow dataset into file tidy_dataset.txt. 
 
 Description of the variable names in tidy dataset:
 ======================================
