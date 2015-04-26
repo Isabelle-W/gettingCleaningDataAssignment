@@ -27,7 +27,7 @@ names(all_subjects) <- "subjectID"
 all_activities <- rbind(activities_train,activities_test)
 names(all_activities) <- "activityID"
 
-## extract columns from all_data where features represent mean() or std()
+# extract columns from all_data where features represent mean() or std()
 ## and polish column names
 colsubset <- grep("mean[(]|std[(]",features_list$V2)
 features_subset <- features_list[colsubset,]
@@ -39,7 +39,7 @@ colnames(data_subset) <- features_subset$V2
 ## merge subjects, activities and data subset
 final_dataset <- cbind(all_subjects,all_activities,data_subset)
 
-## calculate average of each variable for each activity and subject
+# calculate average of each variable for each activity and subject
 aggregated_data <-aggregate(final_dataset, by=list(final_dataset$activityID,final_dataset$subjectID),FUN=mean)
 
 ## merge activities and reorder by subject ID and activity ID
@@ -48,8 +48,13 @@ merged_dataset <- merged_dataset[order(merged_dataset$subjectID,merged_dataset$a
 
 ## remove unneeded merge columns and rearrange column order as activity is now in last column
 tidy_dataset <- merged_dataset[,-(1:3)]
-tidy_dataset <- tidy_dataset[,c(1,length(tidy_dataset),3:length(tidy_dataset)-1)]
+tidy_dataset <- tidy_dataset[,c(1,length(tidy_dataset),3:length(tidy_dataset)-1)] 
+
+## convert into a narrow dataset with 1 variable and 1 average column
+library(reshape2)
+melted_dataset <- melt(tidy_dataset,id=c("subjectID","activity"),measure.vars=features_subset$V2)
+colnames(melted_dataset)[4] <- "average"
 
 ## save tidy dataset to file
-write.table(tidy_dataset,file="./tidy_dataset.txt",row.names=FALSE)
+write.table(melted_dataset,file="./tidy_dataset.txt",row.names=FALSE)
 

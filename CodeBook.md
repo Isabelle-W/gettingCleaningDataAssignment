@@ -43,7 +43,7 @@ Description of the variable names in tidy dataset:
 
 - subjectID: identifier of subject 1..30
 - activity: measured activity for each subject WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-- 66 variables representing 3-axial (-XYZ) averages of the following mean and std features where 't' stands for time, 'f ' for frequency, 'Acc' for acceleration, 'Gyro' for gyroscope and 'Mag' for magnitude:
+- variable: one of 66 variables representing 3-axial (-XYZ) averages of the following mean and std features where 't' stands for time, 'f ' for frequency, 'Acc' for acceleration, 'Gyro' for gyroscope and 'Mag' for magnitude:
 	- tBodyAcc
 	- tGravityAcc
 	- tBodyAccJerk
@@ -61,3 +61,5 @@ Description of the variable names in tidy dataset:
 	- fBodyAccJerkMag
 	- fBodyGyroMag
 	- fBodyGyroJerkMag
+- average: average of the variable value per subjectID and activity
+
