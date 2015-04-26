@@ -55,6 +55,6 @@ library(reshape2)
 melted_dataset <- melt(tidy_dataset,id=c("subjectID","activity"),measure.vars=features_subset$V2)
 colnames(melted_dataset)[4] <- "average"
 
-## save tidy dataset to file
+## save tidy/melted dataset to file
 write.table(melted_dataset,file="./tidy_dataset.txt",row.names=FALSE)
 
